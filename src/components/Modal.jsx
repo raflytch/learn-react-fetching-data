@@ -8,7 +8,11 @@ export const Modal = ({ title, description }) => {
       <div className="modal-action">
         <Button
           children={"Close"}
-          onClick={() => document.getElementById("my_modal_1").close()}
+          onClick={(event) => {
+            event.preventDefault();
+            const modal = document.getElementById("my_modal_1");
+            modal.close();
+          }}
         />
       </div>
     </dialog>
